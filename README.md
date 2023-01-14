@@ -1,1 +1,1 @@
-# Full-Stack-Open-2022-Exercise-3
+# Full-Stack-Open-2022-Exercise
