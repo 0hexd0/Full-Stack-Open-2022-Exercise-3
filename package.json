@@ -6,12 +6,12 @@
   "scripts": {
     "start": "node index.js",
     "dev": "nodemon index.js",
-    "lint": "eslint .",
-    "test": "echo \"Error: no test specified\" && exit 1",
     "build:ui": "rm -rf build && cd ../fullstack/part2/phonebook && npm run build && cp -r build ../../../fullstack2",
     "deploy": "git push heroku master",
     "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && npm run deploy",
-    "logs:prod": "heroku logs --tail"
+    "logs:prod": "heroku logs --tail",
+    "lint": "eslint .",
+    "test": "jest --verbose"
   },
   "repository": {
     "type": "git",
@@ -27,10 +27,15 @@
     "cors": "^2.8.5",
     "dotenv": "^16.0.3",
     "express": "^4.18.2",
+    "lodash": "^4.17.21",
     "mongoose": "^6.8.3"
   },
   "devDependencies": {
     "eslint": "^8.31.0",
+    "jest": "^29.3.1",
     "nodemon": "^2.0.20"
+  },
+  "jest": {
+    "testEnvironment": "node"
   }
 }
