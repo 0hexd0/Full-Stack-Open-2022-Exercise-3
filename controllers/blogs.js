@@ -43,6 +43,9 @@ blogsRouter.post('/', async (request, response) => {
 })
 
 blogsRouter.put('/:id', async (request, response) => {
+  if (!request.user || !request.user.id) {
+    return response.status(401).json({ error: 'token missing or invalid' })
+  }
   const { title, url, likes } = request.body
   const updatedBlog = await Blog.findByIdAndUpdate(request.params.id, { title, url, likes }, { new: true, runValidators: true, context: 'query' })
   response.json(updatedBlog)
