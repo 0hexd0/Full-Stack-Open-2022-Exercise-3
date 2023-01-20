@@ -6,6 +6,7 @@
   "scripts": {
     "start": "cross-env NODE_ENV=production node index.js",
     "dev": "cross-env NODE_ENV=development nodemon index.js",
+    "start:test": "cross-env NODE_ENV=test node index.js",
     "build:ui": "rm -rf build && cd ../fullstack/part2/phonebook && npm run build && cp -r build ../../../fullstack2",
     "deploy": "git push heroku master",
     "deploy:full": "npm run build:ui && git add . && git commit -m uibuild && npm run deploy",
